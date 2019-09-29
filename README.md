@@ -12,7 +12,7 @@ The primary purpose of TAP is to gain insights about veteran and non-veteran act
 
 Currently, without TAP, the VMC does not have a sophisticated method for tracking veteran engagement. Without a system to collect, store, manage, and analyze data, most events sponsored by Veteran Services are tracked by hand. Reports related to events are also generated managed manually in Microsoft Excel. These methods are often prone to errors and can contain bad data. In addition, Veteran Services does not have the ability to perform robust analysis internally or externally about veteran and non-veteran engagement.
 
-#### Primary Functions
+### Primary Functions
 
 TAP's primary functions/responsibilities can be classified at a high-level as the following:
 
