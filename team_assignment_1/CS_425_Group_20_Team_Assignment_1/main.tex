@@ -1,0 +1,80 @@
+\documentclass{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{setspace}
+\usepackage[english]{babel}
+\usepackage[linktoc=all]{hyperref}
+\usepackage{indentfirst}
+\usepackage{titlesec}
+\usepackage{tocloft}
+\usepackage{pdfpages}
+\usepackage{enumitem}
+\usepackage{color,soul}
+\usepackage{float}
+\usepackage{graphicx}
+\graphicspath{ {./project_related_resources/} }
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+\newcommand\sectionbreak{\clearpage}
+
+\title{\textbf{Veteran Military Center \\ Tracking and Analytics Program} \\ \hfill \break \large CS 425 Software Engineering}
+\author{\large \textbf{Autumn Cuellar, Brandon Freshour, and Joseph Yott} \\ 
+\\  \large Team 20, Assignment 1}
+\date{October 11, 2019}
+
+\begin{document}
+
+\maketitle
+\pagenumbering{gobble}
+
+\newpage
+\pagenumbering{roman}
+\tableofcontents
+\newpage
+
+% -----------------------------------------------------------------------------------------
+% Remove the comments for these four lines if your document has included figures and tables
+% -----------------------------------------------------------------------------------------
+\setlength{\cftfigindent}{0pt}  % remove indentation from figures in lof
+% \setlength{\cfttabindent}{0pt}  % remove indentation from tables in lot
+\doublespacing
+\listoffigures
+% \listoftables
+
+\doublespacing
+\newpage
+\pagenumbering{arabic}
+
+% -----------------------------------------------------------------------------------------
+% Remove comment if you need the document to be single-spaced. I am assuming it is double-spaced by default.
+% -----------------------------------------------------------------------------------------
+% \singlespacing
+
+
+%-----------------------------------START-----OF-----SECTION--------------------------------%
+\input{sections/abstract/abstract.tex}
+%-----------------------------------END-----OF-----SECTION----------------------------------%
+\newpage
+%-----------------------------------START-----OF-----SECTION--------------------------------%
+\input{sections/project_description/project_description.tex}
+%-----------------------------------END-----OF-----SECTION----------------------------------%
+\newpage
+%-----------------------------------START-----OF-----SECTION--------------------------------%
+\input{sections/market_potential/market_potential.tex}
+%-----------------------------------END-----OF-----SECTION----------------------------------%
+\newpage
+%-----------------------------------START-----OF-----SECTION--------------------------------%
+\input{sections/time_worked_on_project/time_worked_on_project.tex}
+%-----------------------------------END-----OF-----SECTION----------------------------------%
+\newpage
+%-----------------------------------START-----OF-----SECTION--------------------------------%
+\input{sections/project_related_resources/project_related_resources.tex}
+%-----------------------------------END-----OF-----SECTION----------------------------------%
+\newpage
+%-----------------------------------START-----OF-----SECTION--------------------------------%
+\input{sections/references/references.tex}
+%-----------------------------------END-----OF-----SECTION----------------------------------%
+
+\end{document}
+
+% EOF
