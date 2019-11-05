@@ -1,0 +1,15 @@
+# Data Visualtization Python
+https://towardsdatascience.com/introduction-to-data-visualization-in-python-89a54c97fbed
+
+
+# Logging platform
+https://eliot.readthedocs.io/en/stable/quickstart.html
+
+# BI and Data mining
+https://github.com/mining/mining
+
+# Web based Data Visualization
+https://plot.ly/dash/
+
+#Awesome Python Library List
+https://github.com/vinta/awesome-python

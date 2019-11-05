@@ -1,0 +1,13 @@
+SQLAlchemy==1.3.10
+numpy==1.17.3
+openpyxl==3.0.0
+PySide2==5.13.1
+Pdfkit==0.6.1
+Jinja2==2.10.3
+# Logging Library 
+eliot==1.10.0
+eliot-tree==18.1.1
+
+# Testing Library
+
+# Data validation
