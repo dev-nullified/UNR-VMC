@@ -225,3 +225,9 @@ dmypy.json
 .idea/misc.xml
 .idea/modules.xml
 .idea/vcs.xml
+
+# vs code
+.vscode
+
+# compiled css
+app/static/css/*
