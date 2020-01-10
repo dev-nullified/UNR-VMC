@@ -1,52 +1,41 @@
 version: '3.7'
+
 services:
-    # web:
-    #     image: 
-    #     depends_on: postgredb
 
-    postgredb:
-        image: postgres
-        restart: always
-        environment: 
-            POSTGRES_USER: admin
-            POSTGRES_PASSWORD: example
-        ports:
-            - 5432:5432
-        volumes:
-            # Entrypoint for postgresDB
-            - ./docker-scripts/docker-entrypoint-init.d:/docker-entrypoint-initdb.d/
-            - ./db:/var/lib/postgresql/data
+  postgredb:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: example
+    ports:
+      - 5432:5432
+    volumes:
+      # Entrypoint for postgresDB
+      - "./docker-scripts/docker-entrypoint-init.d:/docker-entrypoint-initdb.d/"
+      - "db-data:/var/lib/postgresql/data"
 
-    dbmgmt:
-        image: adminer
-        restart: always
-        depends_on: 
-            - postgredb
-        ports:
-            - 8080:8080
-        environment:
-            ADMINER_DEFAULT_SERVER: postgredb
-            ADMINER_DEFAULT_DB_DRIVER: postgresql
-            ADMINER_DEFAULT_DB_NAME: vmctap
-            ADMINER_DESIGN: nette
-            ADMINER_PLUGINS: tables-filter tinymce edit-foreign
-        # volumes:
-        #     - /var/www/html/plugins-enabled/
-    
-    pgadmin:
-        image: dpage/pgadmin4
-        restart: always
-        depends_on: 
-            - postgredb
-        ports:
-            - 8081:80
-        environment:
-            PGADMIN_DEFAULT_EMAIL: admin@admin.com
-            PGADMIN_DEFAULT_PASSWORD: SuperSecret
-        volumes: 
-            - ./docker-scripts/pgadmin/dbServer.json:/pgadmin4/servers.json
+  pgadmin:
+    image: dpage/pgadmin4
+    restart: always
+    depends_on:
+      - postgredb
+    ports:
+      - 8081:80
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com
+      PGADMIN_DEFAULT_PASSWORD: SuperSecret
+    volumes:
+      - "./docker-scripts/pgadmin/dbServer.json:/pgadmin4/servers.json"
 
-        
+  flask:
+    build: .
+    ports:
+      - 80:80
+    volumes:
+      - .:/code
+    depends_on:
+      - postgredb
 
-
-# volumes:
+volumes:
+    db-data:

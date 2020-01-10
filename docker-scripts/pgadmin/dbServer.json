@@ -1,0 +1,13 @@
+{
+    "Servers": {
+        "1": {
+            "Name": "VMC-TAP DEV DB",
+            "Group": "Server Group 1",
+            "Port": "5432",
+            "Username": "admin",
+            "Host": "postgredb",
+            "SSLMode": "prefer",
+            "MaintenanceDB": "postgres"
+        }
+    }
+}
