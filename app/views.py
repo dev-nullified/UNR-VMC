@@ -25,8 +25,7 @@ def logout():
 
 @app.route('/person', methods=['GET'])
 def students():
-    pass
-    #return render_template("persons.html")
+    return render_template("persons.html")
 
 
 @app.route('/student/<int:id>', methods=['GET'])
