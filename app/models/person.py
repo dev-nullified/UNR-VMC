@@ -1,5 +1,6 @@
 from app import db
 
+
 class Person(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     nsheid = db.Column(db.Integer)
@@ -16,11 +17,11 @@ class Person(db.Model):
 
     # Address specific (based on the xNAL Name and address Standard)
 
-    postalCode = db.Column(db.String) #i.e. Zip Code
-    thoroughfare = db.Column(db.String) #i.e. Street address
-    administrativeArea = db.Column(db.String) #i.e. State (Stores ISO code)
-    locality = db.Column(db.String) #i.e. City (Stores ISO code)
-    premise = db.Column(db.String) # i.e. Apartment, Suite, Box number, etc.
+    postalCode = db.Column(db.String)  # i.e. Zip Code
+    thoroughfare = db.Column(db.String)  # i.e. Street address
+    administrativeArea = db.Column(db.String)  # i.e. State (Stores ISO code)
+    locality = db.Column(db.String)  # i.e. City (Stores ISO code)
+    premise = db.Column(db.String)  # i.e. Apartment, Suite, Box number, etc.
 
     # Relationship
     barcodes = db.relationship('Barcode', backref='person', lazy=True)
