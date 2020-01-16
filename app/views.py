@@ -1,4 +1,4 @@
-from flask import render_template, redirect, request
+from flask import render_template, redirect, request, jsonify
 from app.models.person import Person
 from app.models.report import Report
 from app import app, db
@@ -9,7 +9,7 @@ def index():
     # if True:
     # return redirect('/login')
     # else:
-    return render_template("index.html")
+    return render_template("home.html")
 
 
 @app.route('/login', methods=['GET'])
@@ -94,3 +94,34 @@ def stats():
 @app.route('/about')
 def about():
     return render_template("about.html")
+
+
+# Brandon F Temporart
+import datetime
+
+@app.route('/api/listreports')
+def getReports():
+
+    tempdict = {
+        'NumberOfReports': '3',
+        'Reports': [
+            {
+                'Name': "Test Report one",
+                'Description': "This is test report one",
+                'LastRun': datetime.datetime.utcnow()
+            },
+            {
+                'Name': "Test Report Two",
+                'Description': "This is test report two",
+                'LastRun': datetime.datetime.utcnow()
+            },
+            {
+                'Name': "Test Report three",
+                'Description': None,
+                'LastRun': datetime.datetime.utcnow()
+            },
+        ]
+    }
+
+    return jsonify(tempdict)
+
