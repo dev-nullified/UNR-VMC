@@ -7,7 +7,7 @@ from app import app, db
 @app.route('/')
 def index():
     # if True:
-    # return redirect('/login')
+        # return redirect('/login')
     # else:
     return render_template("home.html")
 
@@ -23,10 +23,10 @@ def logout():
     return redirect('/')
 
 
-@app.route('/students', methods=['GET'])
+@app.route('/person', methods=['GET'])
 def students():
-    people = Person.query.order_by(Person.id).all()
-    return render_template("")
+    pass
+    #return render_template("persons.html")
 
 
 @app.route('/student/<int:id>', methods=['GET'])
@@ -47,13 +47,17 @@ def delete_person(id):
 
 @app.route('/reports', methods=['GET'])
 def report():
-    all_reports = Report.query.order_by(Report.lastUsed).all
     return render_template("reports.html")
 
 
 @app.route('/create', methods=['PUT', 'GET'])
 def create():
     pass
+    #try:
+        #db.session.commit()
+        #return redirect('/reports')
+    #except:
+        #return 'There was a problem creating this report'
 
 
 @app.route('/view/<int:id>', methods=['GET'])
@@ -77,6 +81,11 @@ def delete(id):
 def upload():
     if request.method=='PUT':
         pass
+        # try:
+            # db.session.commit()
+            # return redirect('/reports')
+        # except:
+            # return 'There was a problem creating this report'
     else:
         return redirect('/')
 
@@ -99,7 +108,7 @@ def about():
 # Brandon F Temporart
 import datetime
 
-@app.route('/api/listreports')
+@app.route('/api/Reports')
 def getReports():
 
     tempdict = {
@@ -125,3 +134,6 @@ def getReports():
 
     return jsonify(tempdict)
 
+@app.route('/api/Person')
+def getPerson():
+    pass
