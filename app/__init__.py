@@ -3,6 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from sassutils.wsgi import SassMiddleware
 
+
 # Initialize the app
 app = Flask(__name__, instance_relative_config=True)
 
@@ -17,8 +18,9 @@ app.wsgi_app = SassMiddleware(app.wsgi_app, {
 
 # DB config
 db = SQLAlchemy(app)
-migrate = Migrate(app, db)
-
+migrate = Migrate(app, db, compare_type=True)
+# importing the models to make sure they are known to Flask-Migrate
+from app.models import person, barcode
 
 # prevent cached responses
 if app.config["DEBUG"]:

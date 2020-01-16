@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block title %}Reports{% endblock %}
+
+{% block additional_scripts %}
+
+    <script type="text/javascript" src="{{ url_for('static', filename='js/reports.js') }}"></script>
+
+{% endblock %}
+
+
+
+{% block body %}
+
+<div class="container-fluid">
+
+Reports
+
+<div class="container">
+  <div id="reports" class="row justify-content-md-center">
+
+
+
+
+
+    <div class="col-md-6">
+        <div class="report-card mr-md-2">Widget 1</div>
+
+    </div>
+    <div class="col-md-6">
+        <div class="bg-info mr-md-2">Widget 1</div>
+
+    </div>
+  </div>
+</div>
+
+</div>
+
+{% endblock %}
