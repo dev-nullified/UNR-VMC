@@ -2,7 +2,11 @@
 import os
 
 # Enable Flask's debugging features. Should be False in production
+ENV = 'development'
 DEBUG = True
+TESTING = True
+TEMPLATES_AUTO_RELOAD = True
+
 
 
 # DB connection
