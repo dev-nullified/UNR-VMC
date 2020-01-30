@@ -16,6 +16,16 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
             integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
             crossorigin="anonymous"></script>
+
+    {# Font-Awesome #}
+    <link href="{{ url_for('static', filename='css/base.scss.css') }}" rel="stylesheet" type="text/css">
+
+
+    <!--- Google Fonts --->
+    {# Source Sans Pro   #}
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700&display=swap" rel="stylesheet">
+
+
     <!-- Custom styles for this template -->
     <!-- <link href="https://getbootstrap.com/docs/4.4/examples/jumbotron/jumbotron.css" rel="stylesheet"> -->
     <link href="{{ url_for('static', filename='css/base.scss.css') }}" rel="stylesheet" type="text/css">
@@ -30,8 +40,10 @@
 
 {% include "navbar.html" %}
 
+<div class="content">
 {% block body %}
 {% endblock %}
+</div>
 
 </body>
 
