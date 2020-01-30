@@ -4,15 +4,89 @@
 
 {% block body %}
 
-<div class="container col-sm-8 col-md-8 col-lg-8 px-4">
-    <h1>This container holds:</h1>
-    <p class="lead">First Name.</p>
-        <p class="lead">Last Name.</p>
-        <p class="lead">Phone Number.</p>
-        <p class="lead">Age.</p>
-        <p class="lead">Gender.</p>
-        <p class="lead">Email.</p>
-        <p class="lead">Full Address.</p>
+<div class="container col-10 px-4">
+    <h1>Student Info:</h1>
+</div>
+
+<div class="container col-10 border border-dark">
+    <form>
+        <!-- FIRST ROW LABELS : NAMES -->
+        <div class="row">
+            <label class="col-4">First Name: </label>
+            <label class="col-4">Last Name: </label>
+            <label class="col-4">Middle Name: </label>
+        </div>
+
+        <!-- FIRST ROW INPUT : NAMES -->
+        <div class="form-group row">
+            <div class="col-4">
+                <input class="border" type="text" readonly class="form-control-plaintext" id="FirstName" value="Example First">
+            </div>
+            <div class="col-4">
+                <input class="border" type="text" readonly class="form-control-plaintext" id="LastName" value="Example Last">
+            </div>
+            <div class="col-4">
+                <input class="border" type="text" readonly class="form-control-plaintext" id="MiddleName" value="Example Middle">
+            </div>
+        </div>
+        <div class="row line">
+        </div>
+
+        <!-- SECOND ROW LABELS : EMAIL AND PHONE NUMBERS-->
+        <div class="border-top row">
+            <label class="col-4">Phone Number: </label>
+            <label class="col-4">Email: </label>
+        </div>
+
+        <!-- SECOND ROW INPUT : EMAIL AND PHONE NUMBERS -->
+        <div class="form-group row">
+            <div class="col-4">
+                <input class="border" type="text" readonly class="form-control-plaintext" id="PhoneNumber" value="(000)-000-0000">
+            </div>
+            <div class="col-4">
+                <input class="border" type="text" readonly class="form-control-plaintext" id="StudentEmail" value="Example@example.com">
+            </div>
+        </div>
+
+                <!-- THIRD ROW LABELS : AGE AND GENDER-->
+        <div class="border-top row">
+            <label class="col-4">Age: </label>
+            <label class="col-4">Gender: </label>
+        </div>
+
+        <!-- THIRD ROW INPUT : AGE AND GENDER -->
+        <div class="form-group row">
+            <div class="col-4">
+                <input class="border" type="text" readonly class="form-control-plaintext" id="StudentAge" value="00">
+            </div>
+            <div class="col-4">
+                <input class="border" type="text" readonly class="form-control-plaintext" id="StudentGender" value="-">
+            </div>
+        </div>
+
+                        <!-- FOURTH ROW LABELS : ADDRESS-->
+        <div class="border-top row">
+            <label class="col-4">Street Address: </label>
+            <label class="col-4">State: </label>
+            <label class="col-4">Zip: </label>
+        </div>
+
+        <!-- FOURTH ROW INPUT : ADDRESS -->
+        <div class="form-group row">
+            <div class="col-4">
+                <input class="border" type="text" readonly class="form-control-plaintext" id="StudentStAddress" value="123 Example St.">
+            </div>
+            <div class="col-4">
+                <input class="border" type="text" readonly class="form-control-plaintext" id="StudnetState" value="Example">
+            </div>
+            <div class="col-4">
+                <input class="border" type="text" readonly class="form-control-plaintext" id="StudnetZip" value="12345">
+            </div>
+        </div>
+
+    </form>
+</div>
+
 </div>
 
 {% endblock %}
