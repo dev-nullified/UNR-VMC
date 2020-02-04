@@ -8,28 +8,209 @@ $color-background: #F5F5F5;
 $color-activeLink: #F5F5F5;
 $color-link: #F5F5F5;
 
+
+//Font Selection
+$default-font: "Source Sans Pro";
+
+
+/*
+######################
+# Universal Content  #
+######################
+*/
+
+
 //Body
 body::before {
   content: "";
   background-image: url("../images/whitenoise-background.png");
   background-size: 100px;
-  opacity: 0.5;
+  //opacity: 0.5;
   //width: 30px;
   //height: 30px;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  position: absolute;
-  z-index: -1;
+  //top: 0;
+  //left: 0;
+  //bottom: 0;
+  //right: 0;
+  //position: fixed;
+  //z-index: -100;
 
 }
 
+//Stop bouncing / ruber-band effect when scrolling
+body {
+  overscroll-behavior: none;
+}
+
+
+
 .content {
+  position: relative;
+  z-index: 2;
   padding-left: 150px;
 }
 
-// Navbar 2.0
+
+/*
+######################
+# Universal Content  #
+######################
+*/
+
+
+//Defaults for ALL pages
+
+//Top bar holds the page title and other general components
+.topbar {
+  align-content: center;
+  padding-left: 15px;
+  padding-right: 15px;
+  justify-content: space-between;
+  display: flex;
+  width: 100%;
+  height: 50px;
+  background-color: #ffdddd;
+  //margin-bottom: 500px;
+  overflow: hidden;
+  position: static;
+}
+
+.displayTopFcn-flex {
+  min-width: 500px;
+  display: flex;
+  //align-self: end;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: #A5D6D9;
+  padding-right: 15px;
+  padding-left: 15px;
+
+}
+
+
+.buttonBase {
+  align-self: center;
+  width: 100px;
+  height: 40px;
+  border-radius: 4px;
+  box-shadow: 0px 0px 22px 0px rgba(0,0,0,0.24);
+
+}
+
+.pageTitle {
+  font-family: $default-font;
+  font-size: xx-large;
+
+}
+
+
+/*
+###################
+# Search Bar Option 1 #
+###################
+*/
+
+.search-container {
+  width: 60%;
+  //height: 50%;
+  position: relative;
+  display: flex;
+
+}
+
+//Search bar option 1
+
+//.searchTerm {
+//  width: 130%;
+//  border: 3px solid #00B4CC;
+//  border-right: none;
+//  padding: 5px;
+//  height: 36px;
+//  border-radius: 5px 0 0 5px;
+//  outline: none;
+//  color: #9DBFAF;
+//}
+//
+//.searchBtn {
+//  width: 40px;
+//  height: 36px;
+//  border: 1px solid #00B4CC;
+//  background: #00B4CC;
+//  text-align: center;
+//  color: #fff;
+//  border-radius: 0 5px 5px 0;
+//  cursor: pointer;
+//  font-size: 20px;
+//}
+
+//Search Option 2
+//.searchTerm {
+//  width: 130%;
+//  //border: 3px solid #00B4CC;
+//  //border-right: none;
+//  padding: 5px;
+//  height: 36px;
+//  border-radius: 5px 0px 0px 5px;
+//  border: none;
+//  //outline: none;
+//  color: #9DBFAF;
+//}
+//
+//.searchBtn {
+//  width: 40px;
+//  height: 36px;
+//  border: 1px solid #00B4CC;
+//  background: #00B4CC;
+//  text-align: center;
+//  color: #fff;
+//  border-radius: 0 5px 5px 0;
+//  cursor: pointer;
+//  font-size: 20px;
+//}
+
+//Search option 3
+.searchTerm {
+  width: 130%;
+  padding: 5px;
+  height: 36px;
+  border-radius: 0px 5px 5px 0px;
+  border: none;
+  outline: none;
+  //color: #9DBFAF;
+  font-family: $default-font;
+}
+
+.searchBtn {
+  font-size: small;
+  width: 50px;
+  height: 36px;
+  background: #fff;
+  text-align: center;
+  align-items: center;
+  //color: #fff;
+  border-radius: 5px 0px 0px 5px;
+  font-size: 20px;
+  text-align: center;
+  vertical-align: bottom;
+  display: flex;
+  justify-content: center;
+  color: #9DBFAF;
+}
+.searchBtn .fa{
+  font-size: medium;
+
+}
+
+//input[type=search] {
+//  font-family: "Font Awesome 5 Free";
+//}
+
+
+/*
+###################
+# Navigation Bar  #
+###################
+*/
 
 
 
@@ -95,67 +276,21 @@ body::before {
   .nav a {padding-left: 10px;}
 }
 
-//.navbar p {
-//
-//}
-//
-//
-// Navbar
-//.wrapper {
-//    display: block;
-//}
-//
-//.sidebar {
-//    background-color: $color-primary;
-//    position: fixed;
-//    top: 0;
-//    bottom: 0;
-//    left: 0;
-//    z-index: 100; /* Behind the navbar */
-//    padding: 48px 0 0; /* Height of navbar */
-//    box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
-//  }
-//  .sidebar-sticky {
-//    position: relative;
-//    top: 0;
-//    height: calc(100vh - 48px);
-//    padding-top: .5rem;
-//    overflow-x: hidden;
-//    overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
-//  }
-//
-//  @supports ((position: -webkit-sticky) or (position: sticky)) {
-//    .sidebar-sticky {
-//      position: -webkit-sticky;
-//      position: sticky;
-//    }
-//  }
-//
-//  .sidebar .nav-link {
-//    font-weight: 500;
-//    color: #333;
-//  }
-//
-//  .sidebar .nav-link .feather {
-//    margin-right: 4px;
-//    color: $color-primary;
-//  }
-//
-//  .sidebar .nav-link.active {
-//    color: #007bff;
-//  }
-//
-//  .sidebar .nav-link:hover .feather,
-//  .sidebar .nav-link.active .feather {
-//    color: inherit;
-//  }
-//
-//  .sidebar-heading {
-//    font-size: .75rem;
-//    text-transform: uppercase;
-//  }
+
+/*
+###################
+# Reports Page    #
+###################
+*/
+
+
+
 
 // Reports page
+.container-fluid {
+  padding-top: 20px;
+}
+
 .reportGrid {
   display: grid;
   //grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -173,7 +308,7 @@ body::before {
 
 .reportCardBase {
   padding: 30px;
-  font-family: "Source Sans Pro";
+  font-family: $default-font;
   width: 350px;
   height: 200px;
   box-shadow: 0px 0px 22px 0px rgba(0,0,0,0.24);
@@ -183,4 +318,16 @@ body::before {
 .reportTitle {
   font-size: xx-large;
 
+}
+
+.reportFunctions {
+  position: relative;
+  top: 0px;
+  right: 10px;
+  float: right;
+}
+
+.newReportBtn {
+  background-color: #43425D;
+  //margin-left: 300px;
 }
