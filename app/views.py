@@ -107,7 +107,7 @@ def about():
 # Brandon F Temporart
 import datetime
 
-@app.route('/api/Reports')
+@app.route('/api/reports')
 def getReports():
 
     tempdict = {

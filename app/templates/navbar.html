@@ -1,42 +1,59 @@
-<nav class="col-md-1 col-lg-1 col-sm-1 col-1 d-md-block sidebar">
-    <div class="sidebar-sticky" >
-      <ul class="nav flex-column nav-tabs">
-        <li class="nav-item" >
-          <a class="nav-link" href="/">
-            Home <span class="sr-only">(current)</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/person">
-            <span data-feather="file"></span>
-            Person
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/reports">
+{#<nav class="col-md-1 col-lg-1 col-sm-1 col-1 d-md-block sidebar">#}
+{#    <div class="sidebar-sticky" >#}
+{#      <ul class="nav flex-column nav-tabs">#}
+{#        <li class="nav-item" >#}
+{#          <a class="nav-link active" href="/">#}
+{#            Home <span class="sr-only">(current)</span>#}
+{#          </a>#}
+{#        </li>#}
+{#        <li class="nav-item">#}
+{#          <a class="nav-link" href="/person">#}
+{#            <span data-feather="file"></span>#}
+{#            Person#}
+{#          </a>#}
+{#        </li>#}
+{#        <li class="nav-item">#}
+{#          <a class="nav-link" href="/reports">#}
+{##}
+{#            Reports#}
+{#          </a>#}
+{#        </li>#}
+{#        <li class="nav-item">#}
+{#          <a class="nav-link" href="/import">#}
+{#            <span data-feather="users"></span>#}
+{#            Import#}
+{#          </a>#}
+{#        </li>#}
+{#        <li class="nav-item">#}
+{#          <a class="nav-link" href="/about">#}
+{#            <span data-feather="bar-chart-2"></span>#}
+{#            About#}
+{#          </a>#}
+{#        </li>#}
+{#      </ul>#}
+{##}
+{#      <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">#}
+{#        <span>Saved reports</span>#}
+{#        <a class="d-flex align-items-center text-muted" href="#" aria-label="Add a new report">#}
+{#          <span data-feather="plus-circle"></span>#}
+{#        </a>#}
+{#      </h6>#}
+{#    </div>#}
+{#  </nav>#}
 
-            Reports
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/import">
-            <span data-feather="users"></span>
-            Import
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/about">
-            <span data-feather="bar-chart-2"></span>
-            About
-          </a>
-        </li>
-      </ul>
 
-      <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
-        <span>Saved reports</span>
-        <a class="d-flex align-items-center text-muted" href="#" aria-label="Add a new report">
-          <span data-feather="plus-circle"></span>
-        </a>
-      </h6>
+{#Nav 2.0#}
+
+<div class="nav">
+
+    <div class="logo">VMC-TAP</div>
+    <div class="navcontainer">
+        <a href="/"><i class="fas fa-home"></i> <linktext>Home</linktext></a>
+
+        <a href="/students"><i class="fas fa-users"></i> <linktext>Students</linktext></a>
+
+        <a href="/import"><i class="fas fa-file-contract"></i> <linktext>Reports</linktext></a>
+
+         <a href="/import"><i class="fas fa-file-import"></i> <linktext>Import</linktext></a>
     </div>
-  </nav>
+</div>
