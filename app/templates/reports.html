@@ -12,9 +12,29 @@
 
 {% block body %}
 
-    <div class="container-fluid">
+    <div class="topbar reportsTopBar">
 
-        Reports
+        <div class="pageTitle">Reports</div>
+
+        <div class="displayTopFcn-flex">
+            <div class="buttonBase newReportBtn"></div>
+
+                <div class="search-container">
+                     {# Search Box option 1 & 2 #}
+{#                    <input type="text" class="searchTerm" placeholder="What are you in search of?">#}
+{#                    <button type="submit" class="searchBtn">#}
+{#                        <i class="fa fa-search"></i>#}
+{#                    </button>#}
+
+                    {# Search Box option 3 #}
+                    <div class="searchBtn"><i class="fa fa-search"></i></div>
+                    <input type="search" class="searchTerm" placeholder="What are you in search of?">
+                </div>
+        </div>
+
+    </div>
+
+    <div class="container-fluid">
 
         <div id="reports" class="reportGrid">
 {#            <div id="reports">#}
@@ -22,6 +42,5 @@
         </div>
     </div>
 
-    </div>
 
 {% endblock %}

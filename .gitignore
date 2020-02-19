@@ -230,4 +230,6 @@ dmypy.json
 .vscode
 
 # compiled css
-app/static/css/*
+app/static/css/
+app/static/css/base.scss.css
+app/static/css/base.scss.css.map
