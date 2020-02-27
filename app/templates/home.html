@@ -4,24 +4,29 @@
 
 {% block body %}
 
-<div class="container col-sm-8 col-md-8 col-lg-8 px-4">
-    <h1>This is the Home Page</h1>
-    <p class="lead">Here is the VA Crest.</p>#}
+<div class="container col-sm-7 col-md-7 col-lg-7 pr-15 mx-auto">
+    <h1 class="container col-sm-8 col-md-8 col-lg-8 px-3">VMC-TAP</h1>
+<p>
+    <img src="{{ url_for('static', filename='images/VA_Crest.jpg') }}" alt="VA Crest" width="380" height="380" >
+</p>
 
-    <img src="{{ url_for('static', filename='images/VA_Crest.jpg') }}" alt="VA Crest" width="200" height="200">
+<joebody>
+  <div class="container col-sm-8 col-md-8 col-lg-8 px-4">
+
+    <h3>Click Counter</h3>
+    <button id="clickme">Click me: 0</button>
+
+  </div>
+</joebody>
 </div>
 
-<div
-
-=======
-<div class="container col-sm-8 col-md-8 col-lg-8 px-4">
-    <h1>This is the Home Page</h1>
-    <p class="lead">Here is the VA Crest.</p>
-    <div class="container border border-dark">
-        <img src="{{ url_for('static', filename='images/VA_Crest.jpg') }}" alt="VA Crest" width="200" height="200">
-    </div>
-</div>
-</div>
-
+<script>
+var button = document.getElementById("clickme"),
+  count = 0;
+button.onclick = function() {
+  count += 1;
+  button.innerHTML = "Click me: " + count;
+};
+</script>
 
 {% endblock %}

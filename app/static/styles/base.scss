@@ -6,7 +6,7 @@
 $color-primary: #43425D;
 $color-background: #F5F5F5;
 $color-activeLink: #F5F5F5;
-$color-link: #F5F5F5;
+$color-link: #31edf5;
 
 
 //Font Selection
@@ -40,23 +40,25 @@ body::before {
 //Stop bouncing / ruber-band effect when scrolling
 body {
   overscroll-behavior: none;
+  //adding color to basic backround
+  background: linear-gradient(-90deg, #f5f5dc, #232493);
+
 }
 
-
+//for home page counter
+joebody{
+  margin: 0;
+  padding: 0;
+  font-family: "Times New Roman", "Times New Roman";
+  font-size: 20pt;
+  font-weight: normal;
+}
 
 .content {
   position: relative;
   z-index: 2;
   padding-left: 150px;
 }
-
-
-/*
-######################
-# Universal Content  #
-######################
-*/
-
 
 //Defaults for ALL pages
 
@@ -87,6 +89,26 @@ body {
 
 }
 
+//BUTTON TEMPLATE -joe
+//button {
+  //padding: 20px;
+  //background: transparent;
+  //text-shadow: 1px 1px 1px #202020;
+  //font-family: "Times New Roman", "Times New Roman";
+  //font-size: 18pt;
+  //border: 1px solid lightblue;
+  //color: lightblue;
+//}
+
+//for rounded image for VA crest on home page
+//NOTE: currently effects all images, if needed
+//      make into body for home page.
+img{
+  border-radius: 50%;
+  border-style: groove;
+  border-width: thick;
+  border-color: blue;
+}
 
 .buttonBase {
   align-self: center;
