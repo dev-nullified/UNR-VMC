@@ -1,35 +1,71 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
+from flask_marshmallow import Marshmallow
 from flask_migrate import Migrate
 from sassutils.wsgi import SassMiddleware
+from os import environ
 
 
-# Initialize the app
-app = Flask(__name__, instance_relative_config=True)
+# Globally accessible libraries
+db = SQLAlchemy()
+ma = Marshmallow()
+# r = FlaskRedis()
 
 
-# Load the config file
-app.config.from_object('config')
+def create_app():
+    """Initialize the core application and load the config."""
+    # Initialize the app
+    app = Flask(__name__, instance_relative_config=True)
+    # app.config.from_object('config')
 
-# Configure SaaS compile
-app.wsgi_app = SassMiddleware(app.wsgi_app, {
-    'app': ('static/styles', 'static/css', '/static/css')
-})
+    # Get config file
+    if environ.get("FLASK_ENV").startswith("dev"):
+        app.config.from_object("config.DevConfig")
+    else:
+        app.config.from_object("config.ProdConfig")
 
-# DB config
-db = SQLAlchemy(app)
-migrate = Migrate(app, db, compare_type=True)
-# importing the models to make sure they are known to Flask-Migrate
-from app.models import person, barcode
+    print(f'ENV is set to: {app.config["ENV"]}')
 
-# prevent cached responses
-if app.config["DEBUG"]:
-    @app.after_request
-    def after_request(response):
-        response.headers["Cache-Control"] = "no-cache, no-store, must-revalidate, public, max-age=0"
-        response.headers["Expires"] = 0
-        response.headers["Pragma"] = "no-cache"
-        return response
+    # Initialize Plugins
+    db.init_app(app)
+    ma.init_app(app)
+    
+
+
+
+    with app.app_context():
+        # Configure SaaS compile
+        app.wsgi_app = SassMiddleware(app.wsgi_app, {
+            'app': {
+                'sass_path': 'static/styles', 
+                'css_path': 'static/css', 
+                'wsgi_path': '/static/css', 
+                'strip_extension': True
+                },
+        })
+
+
+        # DB config
+        migrate = Migrate(app, db, compare_type=True)
+        # importing the models to make sure they are known to Flask-Migrate
+        from .models import person, barcode
+
+
+
+        # prevent cached responses
+        if app.config["DEBUG"]:
+            @app.after_request
+            def after_request(response):
+                response.headers["Cache-Control"] = "no-cache, no-store, must-revalidate, public, max-age=0"
+                response.headers["Expires"] = 0
+                response.headers["Pragma"] = "no-cache"
+                return response
+
+        # import routes
+        from . import views
+
+        return app
+
 
 # VERY LAST import
-from app import views, models
+# from app import views, models
