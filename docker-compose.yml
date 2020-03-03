@@ -12,8 +12,9 @@ services:
       - 5432:5432
     volumes:
       # Entrypoint for postgresDB
-      - "./docker-scripts/docker-entrypoint-init.d:/docker-entrypoint-initdb.d/"
+      - "./docker/docker-scripts/docker-entrypoint-init.d:/docker-entrypoint-initdb.d/"
       - "db-data:/var/lib/postgresql/data"
+      - "./docker/dockerFiles:/opt/data"
 
   pgadmin:
     image: dpage/pgadmin4
@@ -29,11 +30,13 @@ services:
       - "./docker-scripts/pgadmin/dbServer.json:/pgadmin4/servers.json"
 
   flask:
-    build: .
+    build: 
+      context: .
+      dockerfile: ./docker/Dockerfile
     ports:
       - 5000:5000
     volumes:
-      - .:/code
+      - ./app:/code/app
     depends_on:
       - postgredb
 
