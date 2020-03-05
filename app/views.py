@@ -1,7 +1,9 @@
-from flask import render_template, redirect, request, jsonify
-from app.models.person import Person
-from app.models.report import Report
-from app import app, db
+from flask import render_template, redirect, request, jsonify, Response
+from .models.person import Person, PersonSchema
+# from app.models.report import Report
+from . import db
+from app.utils.report import ReportRunner
+from flask import current_app as app
 
 
 @app.route('/')
@@ -136,3 +138,76 @@ def getReports():
 @app.route('/api/Person')
 def getPerson():
     pass
+
+@app.route('/test/reportbuilder')
+def getReportWizard():
+    return render_template("reportWizard2.html")
+
+@app.route('/test/reportOutput')
+def getReportTest():
+
+    queryResult = ReportRunner()
+    result = queryResult.run_report(["id","nshe","firstName"], None, None)
+        
+    return jsonify(result)
+
+@app.route('/test/reportbuilder2')
+def getReportBuilderTest():
+    return render_template("reportWizard3.html")
+
+
+@app.route('/test/fieldmetadata')
+def getFieldMetadata():
+    report = ReportRunner()
+    fields = report.get_query_filter_for_web(model=Person)
+    return fields
+
+
+
+
+@app.route('/test/studen/')
+def getMockStudents():
+    fakeData = {
+        'f_name': "johnny",
+        'l_name': "adam"
+    }
+
+    return jsonify(fakeData)
+
+
+
+# API ROUTES FOR REPORTS
+
+
+# Submit rules to run
+@app.route('/api/report/rules', methods=['POST'])
+def reportRules():
+
+    request_data = request.get_json()
+    # request_data = request.form
+
+    print(request_data)
+
+    report = ReportRunner()
+
+    report.run_report(request_data)
+
+    # print("\n\n RULES BUILT: ")
+    # print(rules_built)
+
+    request_validation = True
+
+    if request_validation:
+
+        return Response(status=201)
+
+
+
+
+# Get all avalible filters for building a report
+@app.route('/api/report/filters', methods=['GET'])
+def reportFilters():
+    report = ReportRunner()
+    filters = report.get_query_filter_for_web(model=Person)
+
+    return jsonify(filters)
