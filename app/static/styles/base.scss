@@ -22,9 +22,8 @@ $default-font: "Source Sans Pro";
 
 //Body
 body::before {
-  content: "";
-  background-image: url("../images/whitenoise-background.png");
-  background-size: 100px;
+  //background-image: url("../images/whitenoise-background.png");
+  //background-size: 100px;
   //opacity: 0.5;
   //width: 30px;
   //height: 30px;
@@ -33,31 +32,31 @@ body::before {
   //bottom: 0;
   //right: 0;
   //position: fixed;
-  //z-index: -100;
+  //z-index: 100;
 
 }
 
 //Stop bouncing / ruber-band effect when scrolling
 body {
-  overscroll-behavior: none;
   //adding color to basic backround
   background: linear-gradient(-90deg, #f5f5dc, #919390);
 
 }
 
+
 //for home page counter
 joebody{
   margin: 0;
-  padding: 0;
+  padding: 2px;
   font-family: "Times New Roman", "Times New Roman";
   font-size: 20pt;
   font-weight: normal;
 }
 
 .content {
-  position: relative;
-  z-index: 2;
-  padding-left: 150px;
+  //position: fixed;
+  //z-index: 10;
+  padding-left: 200px;
 }
 
 //Defaults for ALL pages
@@ -239,11 +238,7 @@ img{
 .nav {
   display: block;
   position: fixed;
-  width: 150px;
   height: 100%;
-  z-index: 1;
-  top: 0;
-  left: 0;
   background-color: $color-primary;
   overflow-x: hidden; /* Disable horizontal scroll */
   padding-top: 20px; /* Place content 60px from the top */
@@ -256,16 +251,17 @@ img{
 
 .logo {
   //padding-top: ;
-  padding-bottom: 20px;
+  padding-bottom: 30px;
   text-align: center;
   color: white;
   font-size: 30px;
 }
 
 .navcontainer {
-  position: relative;
+  //position: sticky;
   //display: flex;
 }
+
 
 .nav a {
   padding: 8px 8px 8px;
@@ -273,13 +269,14 @@ img{
   text-decoration: none;
   font-size: .875rem;;
   color: #818181;
+  postion: sticky;
   display: block;
-  //transition: 0.3s;
-  //width: 100vw;
-  height: 32px;
-  align-items: center;
-  align-self: center;
-  position: relative;
+  transition: 0.3s;
+  width: 15vw;
+  z-index: 20;
+  //height: 32px;
+  //align-items: center;
+  //align-self: center;
   //transform: translateX(-50%);
 }
 
@@ -288,12 +285,12 @@ img{
 }
 
 .nav a:hover {
-  color: #f1f1f1;
-  background-color: #9C1A1C;
+  color: #919390;
+  background-color: #434a85;
 }
 
 @media screen and (max-width: 600px) {
-  .nav linktext {display: none;}
+  //.nav linktext {display: none;}
   .nav  {width: 72px;}
   .nav a {padding-left: 10px;}
 }

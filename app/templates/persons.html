@@ -5,127 +5,150 @@
 {% block body %}
 
 <!-- STUDENT INFO -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm border border-dark">
+            <form>
+                <!-- FIRST ROW LABELS : NAMES -->
+                <div class="row small">
+                    <label class="col-3">First Name: </label>
+                    <label class="col-3">Last Name: </label>
+                    <label class="col-3">Middle Name: </label>
+                </div>
 
-<div class="container col-10 px-4">
-    <h1>Student Info:</h1>
-</div>
+                <!-- FIRST ROW INPUT : NAMES -->
+                <div class="form-group row">
+                    <div class="col-3">
+                        <input class="border" type="text" readonly class="form-control-plaintext" id="FirstName" value="Example First">
+                    </div>
+                    <div class="col-3">
+                        <input class="border" type="text" readonly class="form-control-plaintext" id="LastName" value="Example Last">
+                    </div>
+                    <div class="col-2">
+                        <input class="border" type="text" readonly class="form-control-plaintext" id="MiddleName" value="Example Middle">
+                    </div>
+                </div>
+                <div class="row line">
+                </div>
 
-<div class="container col-10 border border-dark">
-    <form>
-        <!-- FIRST ROW LABELS : NAMES -->
-        <div class="row small">
-            <label class="col-4">First Name: </label>
-            <label class="col-4">Last Name: </label>
-            <label class="col-4">Middle Name: </label>
+                <!-- SECOND ROW LABELS : EMAIL AND PHONE NUMBERS-->
+                <div class="border-top row small">
+                    <label class="col-3">Phone Number: </label>
+                    <label class="col-3">Email: </label>
+                </div>
+
+                <!-- SECOND ROW INPUT : EMAIL AND PHONE NUMBERS -->
+                <div class="form-group row">
+                    <div class="col-3">
+                        <input class="border" type="text" readonly class="form-control-plaintext" id="PhoneNumber" value="(000)-000-0000">
+                    </div>
+                    <div class="col-3">
+                        <input class="border" type="text" readonly class="form-control-plaintext" id="StudentEmail" value="Example@example.com">
+                    </div>
+                </div>
+
+                <!-- THIRD ROW LABELS : AGE AND GENDER-->
+                <div class="border-top row small">
+                    <label class="col-1">Age: </label>
+                    <label class="col-2">Gender: </label>
+                    <label class="col-2">NetID: </label>
+                </div>
+
+                <!-- THIRD ROW INPUT : AGE AND GENDER -->
+                <div class="form-group row padding-2px">
+                    <div class="row1 col-1">
+                        <input class="border" type="text" readonly class="form-control-plaintext" id="StudentAge" value="00">
+                    </div>
+                    <div class="row1 col-2">
+                        <input class="border" type="text" readonly class="form-control-plaintext" id="StudentGender" value="-">
+                    </div>
+                    <div class="row1 col-3">
+                        <input class="border" type="text" readonly class="form-control-plaintext" id="NetID" value="00000123456789">
+                    </div>
+                </div>
+
+                <!-- FOURTH ROW LABELS : ADDRESS-->
+                <div class="border-top row small">
+                    <label class="col-3">Street Address: </label>
+                    <label class="col-3">State: </label>
+                    <label class="col-3">Zip: </label>
+                </div>
+
+                <!-- FOURTH ROW INPUT : ADDRESS -->
+                <div class="form-group row small width-90%">
+                    <div class="col-3">
+                        <input class="border" type="text" readonly class="form-control-plaintext" id="StudentStAddress" value="123 Example St.">
+                    </div>
+                    <div class="col-3">
+                        <input class="border" type="text" readonly class="form-control-plaintext" id="StudnetState" value="Example">
+                    </div>
+                    <div class="col-3">
+                        <input class="border" type="text" readonly class="form-control-plaintext" id="StudnetZip" value="12345">
+                    </div>
+                </div>
+
+            </form>
         </div>
 
-        <!-- FIRST ROW INPUT : NAMES -->
-        <div class="form-group row">
-            <div class="col-4">
-                <input class="border" type="text" readonly class="form-control-plaintext" id="FirstName" value="Example First">
-            </div>
-            <div class="col-4">
-                <input class="border" type="text" readonly class="form-control-plaintext" id="LastName" value="Example Last">
-            </div>
-            <div class="col-4">
-                <input class="border" type="text" readonly class="form-control-plaintext" id="MiddleName" value="Example Middle">
-            </div>
-        </div>
-        <div class="row line">
-        </div>
+        <!-- BARCODE -->
+        <div class="col-sm border border-dark">
+            <form>
 
-        <!-- SECOND ROW LABELS : EMAIL AND PHONE NUMBERS-->
-        <div class="border-top row small">
-            <label class="col-4">Phone Number: </label>
-            <label class="col-4">Email: </label>
-        </div>
+                <!--  BARCODE NUMBER -->
+                <div class="row small">
+                    <div class="border-top row small">
+                        <label class="col-6">Barcode Number: </label>
+                        <label class="col-6">Date Used</label>
+                    </div>
+                </div>
 
-        <!-- SECOND ROW INPUT : EMAIL AND PHONE NUMBERS -->
-        <div class="form-group row">
-            <div class="col-4">
-                <input class="border" type="text" readonly class="form-control-plaintext" id="PhoneNumber" value="(000)-000-0000">
-            </div>
-            <div class="col-4">
-                <input class="border" type="text" readonly class="form-control-plaintext" id="StudentEmail" value="Example@example.com">
-            </div>
+                    <!-- DATE BARCODE WAS LAST USED -->
+                                <div class="form-group row small width-90%">
+                    <div class="col-3">
+                        <input class="border" type="text" readonly class="form-control-plaintext" id="StudentBarCode" value="00000123456789">
+                    </div>
+                    <div class="col-3">
+                        <input class="border" type="text" readonly class="form-control-plaintext" id="StudentUseDate" value="Mon 00, 2000">
+                    </div>
+                </div>
+            </form>
         </div>
-
-        <!-- THIRD ROW LABELS : AGE AND GENDER-->
-        <div class="border-top row small">
-            <label class="col-4">Age: </label>
-            <label class="col-4">Gender: </label>
-        </div>
-
-        <!-- THIRD ROW INPUT : AGE AND GENDER -->
-        <div class="form-group row">
-            <div class="col-4">
-                <input class="border" type="text" readonly class="form-control-plaintext" id="StudentAge" value="00">
-            </div>
-            <div class="col-4">
-                <input class="border" type="text" readonly class="form-control-plaintext" id="StudentGender" value="-">
-            </div>
-        </div>
-
-        <!-- FOURTH ROW LABELS : ADDRESS-->
-        <div class="border-top row small">
-            <label class="col-4">Street Address: </label>
-            <label class="col-4">State: </label>
-            <label class="col-4">Zip: </label>
-        </div>
-
-        <!-- FOURTH ROW INPUT : ADDRESS -->
-        <div class="form-group row">
-            <div class="col-4">
-                <input class="border" type="text" readonly class="form-control-plaintext" id="StudentStAddress" value="123 Example St.">
-            </div>
-            <div class="col-4">
-                <input class="border" type="text" readonly class="form-control-plaintext" id="StudnetState" value="Example">
-            </div>
-            <div class="col-4">
-                <input class="border" type="text" readonly class="form-control-plaintext" id="StudnetZip" value="12345">
-            </div>
-        </div>
-
-    </form>
+    </div>
 </div>
 
 
 <!-- EVENT INFO -->
-
-<div class="container col-10 px-4">
-    <h1>Student Event Info:</h1>
-</div>
-
-<div class="container-fluid col-10 border border-dark ">
-    <form>
-        <!-- FIRST ROW LABELS : NAMES -->
-        <div class="row bold">
-            <label class="col-2">Swipe In: </label>
-            <label class="col-2">Swipe Out: </label>
-            <label class="col-2">Location: </label>
-            <label class="col-2">Barcode: </label>
-        </div>
-
-        <!-- FIRST ROW INPUT : NAMES -->
-        <div class="form-group row">
-            <div class="col-2">
-                <input class="border" type="text" readonly class="form-control-plaintext" id="SwipeIn" value="DATE/TIME">
+<div class="container">
+    <div class="container-row border border-dark">
+        <form>
+            <!-- FIRST ROW LABELS : NAMES -->
+            <div class="row bold">
+                <label class="col-2">Swipe In: </label>
+                <label class="col-2">Swipe Out: </label>
+                <label class="col-2">Location: </label>
+                <label class="col-2">Barcode: </label>
             </div>
-            <div class="col-2">
-                <input class="border" type="text" readonly class="form-control-plaintext" id="SwipeOut" value="DATE/TIME">
-            </div>
-            <div class="col-2">
-                <input class="border" type="text" readonly class="form-control-plaintext" id="Location" value="Example Location">
-            </div>
-            <div class="col-2">
-                <input class="border" type="text" readonly class="form-control-plaintext" id="Barcode" value="1234567890">
-            </div>
-        </div>
-        <div class="row line">
-        </div>
 
-    </form>
-</div>
+            <!-- FIRST ROW INPUT : NAMES -->
+            <div class="form-group row">
+                <div class="col-2">
+                    <input class="border" type="text" readonly class="form-control-plaintext" id="SwipeIn" value="DATE/TIME">
+                </div>
+                <div class="col-2">
+                    <input class="border" type="text" readonly class="form-control-plaintext" id="SwipeOut" value="DATE/TIME">
+                </div>
+                <div class="col-2">
+                    <input class="border" type="text" readonly class="form-control-plaintext" id="Location" value="Example Location">
+                </div>
+                <div class="col-2">
+                    <input class="border" type="text" readonly class="form-control-plaintext" id="Barcode" value="1234567890">
+                </div>
+            </div>
+            <div class="row line">
+            </div>
+
+        </form>
+    </div>
 
 </div>
 
