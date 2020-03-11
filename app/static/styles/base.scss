@@ -7,8 +7,11 @@
 @import "fontawesome/fontawesome.scss";
 @import "fontawesome/solid.scss";
 
-//Import other scss files
-//@import "progressBar";
+// Color Section
+$color-primary: #43425D;
+$color-background: #F5F5F5;
+$color-activeLink: #F5F5F5;
+$color-link: #31edf5;
 
 
 
@@ -45,21 +48,31 @@ body::before {
   //bottom: 0;
   //right: 0;
   //position: fixed;
-  //z-index: -100;
+  //z-index: 100;
 
 }
 
 //Stop bouncing / ruber-band effect when scrolling
 body {
+  //adding color to basic backround
+  // background: linear-gradient(-90deg, #f5f5dc, #919390);
   overscroll-behavior: none;
 }
 
 
+//for home page counter
+joebody{
+  margin: 0;
+  padding: 2px;
+  font-family: "Times New Roman", "Times New Roman";
+  font-size: 20pt;
+  font-weight: normal;
+}
 
 .content {
-  position: relative;
-  z-index: 2;
-  padding-left: 150px;
+  //position: fixed;
+  //z-index: 10;
+  padding-left: 200px;
 }
 
 .paperBase {
@@ -108,6 +121,26 @@ body {
 
 }
 
+//BUTTON TEMPLATE -joe
+//button {
+  //padding: 20px;
+  //background: transparent;
+  //text-shadow: 1px 1px 1px #202020;
+  //font-family: "Times New Roman", "Times New Roman";
+  //font-size: 18pt;
+  //border: 1px solid lightblue;
+  //color: lightblue;
+//}
+
+//for rounded image for VA crest on home page
+//NOTE: currently effects all images, if needed
+//      make into body for home page.
+img{
+  border-radius: 50%;
+  border-style: groove;
+  border-width: thick;
+  border-color: blue;
+}
 
 .buttonBase {
   align-self: center;
@@ -238,7 +271,6 @@ body {
 .custom-nav {
   display: block;
   position: fixed;
-  width: 150px;
   height: 100%;
   z-index: 100;
   top: 0;
@@ -246,7 +278,7 @@ body {
   background-color: $color-primary;
   overflow-x: hidden; /* Disable horizontal scroll */
   padding-top: 20px; /* Place content 60px from the top */
-
+  width: 180px;
   //transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
 
   //box-shadow: 2px 0px 2px -2px rgba(0,0,0,.2);
@@ -255,14 +287,14 @@ body {
 
 .logo {
   //padding-top: ;
-  padding-bottom: 20px;
+  padding-bottom: 30px;
   text-align: center;
   color: white;
   font-size: 30px;
 }
 
 .navcontainer {
-  position: relative;
+  //position: sticky;
   //display: flex;
 }
 
@@ -272,13 +304,14 @@ body {
   text-decoration: none;
   font-size: .875rem;;
   color: #818181;
-  display: block;
-  //transition: 0.3s;
-  //width: 100vw;
-  height: 32px;
-  align-items: center;
-  align-self: center;
   position: relative;
+  display: block;
+  transition: 0.3s;
+  width: 100%;
+  //z-index: 20;
+  //height: 32px;
+  //align-items: center;
+  //align-self: center;
   //transform: translateX(-50%);
 }
 
@@ -287,16 +320,15 @@ body {
 }
 
 .custom-nav a:hover {
-  color: #f1f1f1;
-  background-color: #9C1A1C;
+  color: #919390;
+  background-color: #434a85;
 }
 
-//
-//@media screen and (max-width: 600px) {
-//  .nav linktext {display: none;}
-//  .nav  {width: 72px;}
-//  .nav a {padding-left: 10px;}
-//}
+@media screen and (max-width: 600px) {
+  //.nav linktext {display: none;}
+  .nav  {width: 72px;}
+  .nav a {padding-left: 10px;}
+}
 
 
 
@@ -661,6 +693,4 @@ body {
 .avatar img {
   width: 100%;
   height: auto;
-
-
 }
