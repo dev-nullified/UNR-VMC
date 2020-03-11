@@ -13,8 +13,9 @@ $(document).ready(function() {
             //Create reportcard element
             // var $baseContainer = $('<div/>').addClass('col-md-6');
             var $reportCardBase = $('<div/>').addClass('reportCardBase').attr("data-reportid", key);
-            var $title = $('<div/>').addClass('reportTitle').text(val.Name);
             var $fcnButtons =  $('<div/>').addClass('reportFunctions');
+
+            var $title = $('<div/>').addClass('reportTitle').text(val.Name);
             var $lastRunDate = $('<div/>').addClass('reportRunDate').text(val.LastRun);
             var $description = $('<div/>').addClass('reportDescription').text(val.Description);
 
@@ -24,7 +25,7 @@ $(document).ready(function() {
             $fcnButtons.append($('<i/>').addClass('reportAction remove reportAction fas fa-times'));
 
 
-            $reportCardBase.append($title, $fcnButtons, $lastRunDate, $description);
+            $reportCardBase.append($fcnButtons, $title, $lastRunDate, $description);
             // $baseContainer.append($reportCardBase);
 
             //Add to page

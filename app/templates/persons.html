@@ -4,6 +4,8 @@
 
 {% block body %}
 
+<!-- STUDENT INFO -->
+
 <div class="container col-10 px-4">
     <h1>Student Info:</h1>
 </div>
@@ -11,7 +13,7 @@
 <div class="container col-10 border border-dark">
     <form>
         <!-- FIRST ROW LABELS : NAMES -->
-        <div class="row">
+        <div class="row small">
             <label class="col-4">First Name: </label>
             <label class="col-4">Last Name: </label>
             <label class="col-4">Middle Name: </label>
@@ -33,7 +35,7 @@
         </div>
 
         <!-- SECOND ROW LABELS : EMAIL AND PHONE NUMBERS-->
-        <div class="border-top row">
+        <div class="border-top row small">
             <label class="col-4">Phone Number: </label>
             <label class="col-4">Email: </label>
         </div>
@@ -48,8 +50,8 @@
             </div>
         </div>
 
-                <!-- THIRD ROW LABELS : AGE AND GENDER-->
-        <div class="border-top row">
+        <!-- THIRD ROW LABELS : AGE AND GENDER-->
+        <div class="border-top row small">
             <label class="col-4">Age: </label>
             <label class="col-4">Gender: </label>
         </div>
@@ -64,8 +66,8 @@
             </div>
         </div>
 
-                        <!-- FOURTH ROW LABELS : ADDRESS-->
-        <div class="border-top row">
+        <!-- FOURTH ROW LABELS : ADDRESS-->
+        <div class="border-top row small">
             <label class="col-4">Street Address: </label>
             <label class="col-4">State: </label>
             <label class="col-4">Zip: </label>
@@ -82,6 +84,46 @@
             <div class="col-4">
                 <input class="border" type="text" readonly class="form-control-plaintext" id="StudnetZip" value="12345">
             </div>
+        </div>
+
+    </form>
+</div>
+
+</div>
+
+
+<!-- EVENT INFO -->
+
+<div class="container col-10 px-4">
+    <h1>Student Event Info:</h1>
+</div>
+
+<div class="container col-10 border border-dark">
+    <form>
+        <!-- FIRST ROW LABELS : NAMES -->
+        <div class="row bold">
+            <label class="col-3">Swipe In: </label>
+            <label class="col-3">Swipe Out: </label>
+            <label class="col-3">Location: </label>
+            <label class="col-3">Barcode: </label>
+        </div>
+
+        <!-- FIRST ROW INPUT : NAMES -->
+        <div class="form-group row">
+            <div class="col-3">
+                <input class="border" type="text" readonly class="form-control-plaintext" id="SwipeIn" value="DATE/TIME">
+            </div>
+            <div class="col-3">
+                <input class="border" type="text" readonly class="form-control-plaintext" id="SwipeOut" value="DATE/TIME">
+            </div>
+            <div class="col-3">
+                <input class="border" type="text" readonly class="form-control-plaintext" id="Location" value="Example Location">
+            </div>
+            <div class="col-3">
+                <input class="border" type="text" readonly class="form-control-plaintext" id="Barcode" value="1234567890">
+            </div>
+        </div>
+        <div class="row line">
         </div>
 
     </form>
