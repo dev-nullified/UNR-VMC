@@ -1,0 +1,8 @@
+Flask
+Flask-Migrate
+Flask-SQLAlchemy
+Jinja2
+Mako
+MarkupSafe
+SQLAlchemy
+Werkzeug

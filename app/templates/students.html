@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block additional_scripts %}
+
+    <!-- Include Tabulator -->
+    <script type="text/javascript" src="{{ url_for('static', filename='js/libs/tabulator/dist/js/tabulator.js') }}"></script>
+    <link href="{{ url_for('static', filename='js/libs/tabulator/dist/css/materialize/tabulator_materialize.min.css') }}" rel="stylesheet" type="text/css">
+
+    
+    <!-- Include JS for students page -->
+    <script type="text/javascript" src="{{ url_for('static', filename='js/studentsPage.js') }}"></script>
+
+
+{% endblock %}
+
+
+{% block title %}Students{% endblock %}
+
+
+
+
+{% block body %}
+
+    <div class="topbar reportsTopBar">
+
+        <div class="pageTitle">Students</div>
+
+        <div class="displayTopFcn-flex"></div>
+
+    </div>
+
+    <!-- Table code -->
+    <div class="student_table base">
+        <div class="paperBase student_table internal">
+            <div id="tablulator"></div>
+        </div>
+        
+    </div>
+
+    <div class="pagnation">
+
+    </div>
+
+
+
+
+{% endblock %}

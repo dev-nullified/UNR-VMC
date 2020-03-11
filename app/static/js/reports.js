@@ -20,9 +20,9 @@ $(document).ready(function() {
             var $description = $('<div/>').addClass('reportDescription').text(val.Description);
 
             //Routine to add run edit and delete buttons
-            $fcnButtons.append($('<i/>').addClass('reportActionRun fas fa-play'));
-            $fcnButtons.append($('<i/>').addClass('reportActionEdit fas fa-pen'));
-            $fcnButtons.append($('<i/>').addClass('reportActionDelete fas fa-times'));
+            $fcnButtons.append($('<i/>').addClass('reportAction run fas fa-play'));
+            $fcnButtons.append($('<i/>').addClass('reportAction edit reportAction fas fa-pen'));
+            $fcnButtons.append($('<i/>').addClass('reportAction remove reportAction fas fa-times'));
 
 
             $reportCardBase.append($fcnButtons, $title, $lastRunDate, $description);
@@ -34,19 +34,19 @@ $(document).ready(function() {
          });
 
         //Run logic
-        $(".reportActionRun").click(function(event) {
+        $(".reportAction.run").click(function(event) {
             var reportParent = $(this).closest(".reportCardBase");
             console.log("Clicked Run on element with id " + $(reportParent).attr("data-reportid"));
         });
 
         //Edit logic
-        $(".reportActionEdit").click(function(event) {
+        $(".reportAction.edit").click(function(event) {
             var reportParent = $(this).closest(".reportCardBase");
             console.log("Clicked Edit on element with id " + $(reportParent).attr("data-reportid"));
         });
 
         //Delete logic
-        $(".reportActionDelete").click(function(event) {
+        $(".reportAction.remove").click(function(event) {
             var reportParent = $(this).closest(".reportCardBase");
             console.log("Clicked Delete on element with id " + $(reportParent).attr("data-reportid"));
         });

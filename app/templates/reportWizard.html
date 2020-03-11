@@ -1,0 +1,121 @@
+{% extends "base.html" %}
+
+{% block additional_scripts %}
+
+    <!-- Include CSS for progress bar -->
+    <link href="{{ url_for('static', filename='css/progressBar.scss.css') }}" rel="stylesheet" type="text/css">
+
+    <!-- Include JS for Jquery UI
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script> -->
+
+    <!-- Include Anime JS Library -->
+    <script type="text/javascript" src="{{ url_for('static', filename='js/libs/anime/lib/anime.min.js') }}"></script>
+
+
+    <!-- Include JS for progress logic -->
+    <script type="text/javascript" src="{{ url_for('static', filename='js/newReportWizard.js') }}"></script>
+
+
+    <!-- include CSS for Query Builder -->
+    <link href="{{ url_for('static', filename='js/libs/jQuery-QueryBuilder/dist/css/query-builder.dark.css') }}" rel="stylesheet" type="text/css">
+
+    <!-- Include jquery builder -->
+    <script type="text/javascript" src="{{ url_for('static', filename='js/libs/jQuery-QueryBuilder/dist/js/query-builder.standalone.min.js') }}"></script>
+
+    <!-- Include Tabulator -->
+    <script type="text/javascript" src="{{ url_for('static', filename='js/libs/tabulator/dist/js/tabulator.js') }}"></script>
+    <link href="{{ url_for('static', filename='js/libs/tabulator/dist/css/tabulator_modern.css') }}" rel="stylesheet" type="text/css">
+
+
+
+
+
+{% endblock %}
+
+{% block title %}Report Progress{% endblock %}
+
+
+{% block body %}
+    <div class="topbar reportsTopBar">
+
+        <div class="pageTitle">New Report Wizard</div>
+
+        <div class="displayTopFcn-flex"></div>
+
+    </div>
+
+    <div class="report-wizard base">
+        <div class="paperBase report-wizard internal">
+            <ul id="wizardProgress" class="progress-tracker progress-tracker--center">
+                <li class="progress-step">
+                    1
+                    <div class="progress-marker"></div>
+                </li>
+                <li class="progress-step">
+                    2
+                    <div class="progress-marker"></div>
+                </li>
+                <li class="progress-step">
+                    3
+                    <div class="progress-marker"></div>
+                </li>
+                <li class="progress-step">
+                    4
+                    <div class="progress-marker"></div>
+                </li>
+            </ul>
+            <div class="report-wizard title">Create a new report</div>
+            <div class="report-wizard title hidden">Select your fields</div>
+            <div class="report-wizard title hidden">Create your criteria</div>
+            <div class="report-wizard title hidden">Preview your report</div>
+            <!-- <div class="report-wizard sub-text">Add a name and description to your report</div> -->
+
+            <div id="wizardContainer" class="report-wizard wizard-container">
+                <div id="1" class="wizard-item">
+
+                    <div class="input-boarder">
+                        <div class="input-title">Name your report</div>
+                        <div class="input-container"><input class="input-custom" type="text"/></div>
+                    </div>
+
+                    <div class="input-boarder">
+                        <div class="input-title">Description</div>
+                        <div class="input-container"><textarea class="input-description type="text"></textarea></div>
+                    </div>
+
+
+                </div>
+
+                <div id="2" class="wizard-item hidden">
+                    PAGE 2
+                </div>
+
+                <div id="3" class="wizard-item hidden">
+                    <div class="report-query">
+                        <div id="query_builder"></div>
+                    </div>
+                </div>
+
+                <div id="4" class="wizard-item hidden">
+                    <div class="report-table">
+                        <div id="tablulator"></div>
+                    </div>
+                </div>
+            </div>
+        
+        <div id="navButtons" class="report-wizard footer">
+            <button type="button" id="cancel" class="buttonBase">Cancel</button>
+            <button type="button" id="backButton" class="buttonBase">Back</button>
+            <button type="button" id="nextButon" class="buttonBase">Next</button>
+         </div>
+
+        </div>
+    </div>
+
+
+    <!-- Include JS for Report Builder and table -->
+    <!-- <script type="text/javascript" src="{{ url_for('static', filename='js/reportBuilder.js') }}"></script> -->
+
+
+
+{% endblock %}
