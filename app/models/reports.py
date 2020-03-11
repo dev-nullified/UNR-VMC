@@ -26,6 +26,7 @@ class ReportFieldIntersect(db.Model):
 
 class ReportFields(db.Model):
     id = db.Column(db.Integer, primary_key=True)
+    alias_name = db.Column(db.String, nullable=False)
     report = db.relationship("ReportFieldIntersect")
 
 

@@ -52,7 +52,7 @@ class ReportRunner:
                 
         #         # q = q.filter(getattr(Person, attribute) >= value)
         rules = self.start_recurse_rules(rules)
-        query = query.filter(*rules)
+        query = query.filter(rules)
         print("RULES")
         print(rules)
         print('\n')
@@ -91,7 +91,7 @@ class ReportRunner:
 
         query_result = queryObj.all()
 
-        serialized_data = modelSchema.dump(query_result, many=True)
+        serialized_data = modelSchema.dumps(query_result, many=True)
         print(serialized_data)
         
 
