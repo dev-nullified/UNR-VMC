@@ -1,0 +1,42 @@
+<html lang="en">
+<head>
+
+    <!-- Include Jquery -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+    <!-- include CSS -->
+    <link href="{{ url_for('static', filename='js/libs/jQuery-QueryBuilder/dist/css/query-builder.dark.css') }}" rel="stylesheet" type="text/css">
+
+    <!-- Include jquery builder -->
+    <script type="text/javascript" src="{{ url_for('static', filename='js/libs/jQuery-QueryBuilder/dist/js/query-builder.standalone.min.js') }}"></script>
+
+    <!-- Include Tabulator -->
+    <script type="text/javascript" src="{{ url_for('static', filename='js/libs/tabulator/dist/js/tabulator.js') }}"></script>
+    <link href="{{ url_for('static', filename='js/libs/tabulator/dist/css/tabulator_modern.css') }}" rel="stylesheet" type="text/css">
+
+
+
+    <!-- Include bootstrap for buttons and css -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+</head>
+
+<body>
+
+
+    <div id="query_builder"></div>
+
+    <button id="get_rules">Get Rules</button>
+
+
+    <p></p>
+
+    <div id="tablulator">
+
+    </div>
+
+    <!-- Include JS for progress logic -->
+    <script type="text/javascript" src="{{ url_for('static', filename='js/reportBuilder.js') }}"></script>
+
+</body>
+</html>

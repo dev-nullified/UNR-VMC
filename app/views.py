@@ -139,9 +139,9 @@ def getReports():
 def getPerson():
     pass
 
-@app.route('/test/reportbuilder')
+@app.route('/reports/new')
 def getReportWizard():
-    return render_template("reportWizard2.html")
+    return render_template("reportWizard.html")
 
 @app.route('/test/reportOutput')
 def getReportTest():
@@ -190,7 +190,7 @@ def reportRules():
 
     report = ReportRunner()
 
-    report.run_report(request_data)
+    data = report.run_report(request_data)
 
     # print("\n\n RULES BUILT: ")
     # print(rules_built)
@@ -199,7 +199,7 @@ def reportRules():
 
     if request_validation:
 
-        return Response(status=201)
+        return data
 
 
 
@@ -211,3 +211,22 @@ def reportFilters():
     filters = report.get_query_filter_for_web(model=Person)
 
     return jsonify(filters)
+
+
+@app.route('/students')
+def getStudentsPage():
+    return render_template("students.html")
+
+
+@app.route('/api/students/get/all')
+def getAllStudents():
+
+    person_obj = Person.query.all()
+
+    person_schema = PersonSchema()
+
+    json_data = person_schema.dump(obj=person_obj, many=True)
+
+    return jsonify(json_data)
+
+    
